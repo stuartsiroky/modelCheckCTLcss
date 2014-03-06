@@ -1,0 +1,57 @@
+Stuart Siroky
+CS5392 Project – Model Checker
+
+File Structure:
+	src - all packages and source files are located here. Main is located in the modelCheckCTL.view 
+			package and is locate in the ModelCheckCTLView object.
+		modelCheckCTL.controller - package
+		modelCheckCTL.model - package
+		modelCheckCTL.util - package
+		modelCheckCTL.view - package
+
+	doc - UML and javadoc documentation for the classes. index.html is the top file
+	modelCheckCTLcss.jar - a sole executable.
+			TestCases - This directory is under the docs and holds the kirpke structure files
+						test case descriptions and results.
+			ScreenShots - Screen shots of initial start up and after a run
+			
+How to run the model checker:
+	The main function is located in the ModelCheckerView object. 
+	Execution of this object will bring up a GUI. SEE ScreenShot directory.
+	 
+	After the GUI is running the user needs to load a file that describes a kripke structure. 
+	This is done by clicking the “Load Kripke Structure” button. SEE valid format.
+	A CTL formula to test needs to be entered. This is done by entering the formula in the left top 
+	text box and clicking “Submit CTL Formula” to submit. Finally the user will enter a state to 
+	start applying the formula. Enter the starting state in the top right text box and then click 
+	the "Check start state" button. The result will be displayed to the log.
+
+	A starting state can not be selected until a valid formula and kripke structe are loaded.
+
+	After a kripke structure is loaded several different formulas and starting states may be tested 
+	without reloading the kripke structure. 
+	
+	A successfully loaded Kripke structure will be output into the text field for observation. 
+	When a CTL formula is entered the resulting reformatted formula, (semantically equivalent) 
+	will be displayed. 
+
+	When you select a starting state and check. The labeling results will be displayed along with 
+	the final results of the labeling algorithm, PASS or FAIL.
+
+
+Kripke Structure Valid Format:
+States comma separated ending with a semicolon. i.e. s1, s2, s3;
+The states are followed by transitions. transitions will have the form
+ <transiton name/label> : from_state - to_state , 
+ with the final transition ending in a ; 
+ i.e. 
+ t1 : s1 - s2,
+ t2 : s1 - s3 ;
+ The transitions will be followed by the state prepositions. prepositions will have the form
+ <state> : p1 p2 ... pn,
+ all prepositons for a state will be separated by a space and end in a , with the final entry
+ ending in a ;
+ i.e. 
+ s1 : p q,
+ s2 : ,
+ s3 : r;
