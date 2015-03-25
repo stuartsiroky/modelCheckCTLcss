@@ -9,7 +9,10 @@ import modelCheckCTL.model.Model;
  */
 public interface View {
 	Controller getController();
+
 	void setController(Controller controller);
+
 	Model getModel();
+
 	void setModel(Model model);
-} //View
+} // View

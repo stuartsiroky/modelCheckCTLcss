@@ -2,6 +2,7 @@ package modelCheckCTL.model;
 
 /**
  * Exception thrown by the model.
+ * 
  * @author ssiroky
  *
  */
@@ -16,5 +17,5 @@ public class ModelException extends Exception {
 	public ModelException(String message) {
 		super(message);
 	}
-	
-} //class ModelException
+
+} // class ModelException

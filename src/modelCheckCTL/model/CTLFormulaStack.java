@@ -3,35 +3,40 @@ package modelCheckCTL.model;
 import java.util.Stack;
 
 /**
- * This class is responsible for creating a data structure to represent 
- * a well formed CTL formula.
+ * This class is responsible for creating a data structure to represent a well
+ * formed CTL formula.
+ * 
  * @author ssiroky
  */
 
 public class CTLFormulaStack {
 
-	static private Stack<CTLFormula> fStack = new Stack<CTLFormula>(); 
+	static private Stack<CTLFormula> fStack = new Stack<CTLFormula>();
 	static private Stack<String> uStack = new Stack<String>();
 	static private int openParenCnt;
 	static private boolean prevWasSymbol;
 	static private boolean prevWasUSymbol;
 	static private boolean debug = false;
 	static private String msg = "";
+
 	/**
 	 * This is the main function and will be used to create the data structure
 	 * representing the CTL formula
-	 * @param formula The string must be a well CTL formula
-	 * @return CTLFormula 
+	 * 
+	 * @param formula
+	 *            The string must be a well CTL formula
+	 * @return CTLFormula
 	 * @throws ModelException
 	 */
-	public static CTLFormula createCTLTree(String formula) throws ModelException {
+	public static CTLFormula createCTLTree(String formula)
+			throws ModelException {
 		msg = "";
 		openParenCnt = 0;
 		prevWasSymbol = false;
 		prevWasUSymbol = false;
 		CTLFormula f = new CTLFormula();
 		String msg = "";
-		
+
 		String[] working;
 		// System.out.println("original formula = " + formula);
 		working = formula.split(" ");
@@ -57,9 +62,9 @@ public class CTLFormulaStack {
 					+ " " + predicate + " " + binarySymbol + " " + unarySymbol
 					+ " " + AESymbol + " " + symbol + " " + prevWasSymbol + " "
 					+ prevWasUSymbol + " " + fStack.size() + " " + openParenCnt);
-			if(fStack.size()>0){
+			if (fStack.size() > 0) {
 				String tmp = "STACK CONTENTS ";
-				for(CTLFormula x : fStack) {
+				for (CTLFormula x : fStack) {
 					tmp = tmp.concat(x.toString() + ", ");
 				}
 				print_debug(tmp);
@@ -156,9 +161,11 @@ public class CTLFormulaStack {
 		} else {
 			f = fStack.pop();
 		}
-	
-		if(!f.isCTLOp()) {
-			msg = msg.concat("Malformed CTL Formula, not all element begin with CTL. " + f.getOp_var() + "\n");
+
+		if (!f.isCTLOp()) {
+			msg = msg
+					.concat("Malformed CTL Formula, not all element begin with CTL. "
+							+ f.getOp_var() + "\n");
 			throw new ModelException(msg);
 		}
 		return f;
@@ -189,11 +196,10 @@ public class CTLFormulaStack {
 				f = fStack.pop();
 				print_debug("unwind 3B " + f.toString());
 				token = fStack.peek().getOp_var();
-				f.addRightFormula(f_); 
+				f.addRightFormula(f_);
 				if (isOpenParen(token)) {
 					fStack.pop();
-				}
-				else {
+				} else {
 					fStack.push(f);
 				}
 				print_debug("unwind 3 " + f.toString() + " token = " + token);
@@ -207,10 +213,11 @@ public class CTLFormulaStack {
 	} // unwindStack
 
 	/**
-	 * Returns true if the string passed is a operator AX, AF, AG, A[.., EX,
-	 * EF, EG, E[, and, or, implies, not else it returns false
+	 * Returns true if the string passed is a operator AX, AF, AG, A[.., EX, EF,
+	 * EG, E[, and, or, implies, not else it returns false
+	 * 
 	 * @param s
-	 * @return boolean 
+	 * @return boolean
 	 */
 	private static boolean isSymbol(String s) {
 		if (isUnarySymbol(s) | isBinarySymbol(s) | isAESymbol(s)) {
@@ -222,6 +229,7 @@ public class CTLFormulaStack {
 
 	/**
 	 * Returns true if the operator is a unary operator like not.
+	 * 
 	 * @param s
 	 * @return boolean
 	 */
@@ -237,6 +245,7 @@ public class CTLFormulaStack {
 
 	/**
 	 * Returns true if the operator is A[.. or E[..
+	 * 
 	 * @param s
 	 * @return boolean
 	 */
@@ -250,6 +259,7 @@ public class CTLFormulaStack {
 
 	/**
 	 * Returns true if the operator takes two arguments like and.
+	 * 
 	 * @param s
 	 * @return boolean
 	 */
@@ -264,6 +274,7 @@ public class CTLFormulaStack {
 
 	/**
 	 * Returns true if an open paren is encountered. Looks for (, A[, E[.
+	 * 
 	 * @param s
 	 * @return boolean
 	 */
@@ -277,6 +288,7 @@ public class CTLFormulaStack {
 
 	/**
 	 * Returns true if a closed paren is encountered. Looks for ) or ].
+	 * 
 	 * @param s
 	 * @return boolean
 	 */
@@ -290,6 +302,7 @@ public class CTLFormulaStack {
 
 	/**
 	 * Returns true is the string is not an operator or parentheses.
+	 * 
 	 * @param s
 	 * @return boolean
 	 */
@@ -303,6 +316,7 @@ public class CTLFormulaStack {
 
 	/**
 	 * Use to debug the object.
+	 * 
 	 * @param s
 	 */
 	private static void print_debug(String s) {

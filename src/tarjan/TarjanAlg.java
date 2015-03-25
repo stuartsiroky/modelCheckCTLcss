@@ -8,8 +8,9 @@ import data_obj.Edge;
 import data_obj.Node;
 
 /**
- * This was slightly modified to handle the case where a node does not
- * have any transitions. The for loop can not handle a null list.
+ * This was slightly modified to handle the case where a node does not have any
+ * transitions. The for loop can not handle a null list.
+ * 
  * @author wiki-algorithms
  *
  */
@@ -19,7 +20,6 @@ public class TarjanAlg {
 	private ArrayList<Node> stack = new ArrayList<Node>(); // stack of nodes
 	private ArrayList<ArrayList<Node>> SCC = new ArrayList<ArrayList<Node>>(); // output
 
-	
 	public TarjanAlg() {
 		super();
 		this.index = 0;
@@ -27,14 +27,13 @@ public class TarjanAlg {
 		SCC = new ArrayList<ArrayList<Node>>();
 	}
 
-
 	public ArrayList<ArrayList<Node>> tarjan(Node v, AdjacencyList list) {
 		v.setIndex(index); // set depth of index of node
 		v.setLowlink(index);
 		index++;
 		stack.add(0, v); // push it onto the stack
 		List<Edge> l = list.getAdjacent(v);
-		if(l != null) {
+		if (l != null) {
 			for (Edge e : l) { // look at all successors of node
 				Node n = e.getTo();
 				if (n.getIndex() == -1) { // was successor visited
@@ -45,7 +44,7 @@ public class TarjanAlg {
 				}
 			}
 		} // list is null
-			
+
 		if (v.getLowlink() == v.getIndex()) { // are we at the root node
 			Node n;
 			ArrayList<Node> component = new ArrayList<Node>();

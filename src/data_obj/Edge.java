@@ -1,6 +1,5 @@
 package data_obj;
 
-
 /**
  * @author wiki-algorithms
  *
@@ -15,13 +14,13 @@ public class Edge implements Comparable<Edge> {
 		return weight;
 	}
 
-	public Edge(final Node argFrom, final Node argTo, final int argWeight){
+	public Edge(final Node argFrom, final Node argTo, final int argWeight) {
 		from = argFrom;
 		to = argTo;
 		weight = argWeight;
 	}
 
-	public int compareTo(final Edge argEdge){
+	public int compareTo(final Edge argEdge) {
 		return weight - argEdge.weight;
 	}
 
@@ -34,6 +33,6 @@ public class Edge implements Comparable<Edge> {
 	}
 
 	public String toString() {
-		return from.toString()+" -> "+to.toString();
+		return from.toString() + " -> " + to.toString();
 	}
 }

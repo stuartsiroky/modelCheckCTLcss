@@ -7,9 +7,10 @@ package data_obj;
 public class Node implements Comparable<Node> {
 
 	final int name;
-	boolean visited = false;   // used for Kosaraju's algorithm and Edmonds's algorithm
-	private int lowlink = -1;          // used for Tarjan's algorithm
-	private int index = -1;            // used for Tarjan's algorithm
+	boolean visited = false; // used for Kosaraju's algorithm and Edmonds's
+								// algorithm
+	private int lowlink = -1; // used for Tarjan's algorithm
+	private int index = -1; // used for Tarjan's algorithm
 
 	public Node(final int argName) {
 		name = argName;
@@ -34,10 +35,11 @@ public class Node implements Comparable<Node> {
 	public int getLowlink() {
 		return lowlink;
 	}
-	
+
 	public void resetNode() {
-		visited = false;   // used for Kosaraju's algorithm and Edmonds's algorithm
-		lowlink = -1;          // used for Tarjan's algorithm
-		index = -1;            // used for Tarjan's algorithm	
+		visited = false; // used for Kosaraju's algorithm and Edmonds's
+							// algorithm
+		lowlink = -1; // used for Tarjan's algorithm
+		index = -1; // used for Tarjan's algorithm
 	}
 }
