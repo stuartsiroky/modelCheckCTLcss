@@ -33,6 +33,7 @@ public class ModelEvent extends ActionEvent {
 	 * @return String
 	 */
 	public String getOutput() {
+		System.out.println ("ModelEvent.getOutput "+message);
 		return message;
 	}
 

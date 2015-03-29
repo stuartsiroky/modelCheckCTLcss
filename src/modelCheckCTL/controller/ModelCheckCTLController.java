@@ -37,8 +37,9 @@ public class ModelCheckCTLController extends AbstractController {
 		ModelCheckCTLView lview = ((ModelCheckCTLView) getView());
 		ModelCheckCTLModel lmodel = ((ModelCheckCTLModel) getModel());
 		ModelCheckCTLUtil lutil = ((ModelCheckCTLUtil) getUtil());
-
+		System.out.println("ModelCheckCTLControler.operation  "+option);
 		if (option.equals(ModelCheckCTLView.CTL_FORMULA)) {
+			
 			// get the text field and parse the formula
 			// spit out the result to the text area
 			// Will need to do the calculation on the kripke stucture
@@ -76,6 +77,7 @@ public class ModelCheckCTLController extends AbstractController {
 	 * @param ksLoaded
 	 */
 	public void setKsLoaded(File ksLoaded) {
+		System.out.println("ModelCheckCTLControler.setKsLoaded ");
 		this.ksLoaded = ksLoaded;
 	}
 
@@ -85,6 +87,7 @@ public class ModelCheckCTLController extends AbstractController {
 	 * @return File
 	 */
 	public File getKsLoaded() {
+		System.out.println("ModelCheckCTLControler.operation getKsLoaded ");
 		return ksLoaded;
 	}
 

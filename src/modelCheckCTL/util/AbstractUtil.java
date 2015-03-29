@@ -25,6 +25,7 @@ public abstract class AbstractUtil implements Util {
 	 * @see modelCheckCTL.util.Util#getView()
 	 */
 	public View getView() {
+		System.out.println("AbstractUtil.getView ");
 		return view;
 	}
 
@@ -34,6 +35,7 @@ public abstract class AbstractUtil implements Util {
 	 * @see modelCheckCTL.util.Util#setView(modelCheckCTL.view.View)
 	 */
 	public void setView(View view) {
+		System.out.println("AbstractUtil.setView ");
 		this.view = view;
 	}
 

@@ -29,6 +29,7 @@ public class ModelCheckCTLUtil extends AbstractUtil {
 	 * @return File handle
 	 */
 	public File openFile() {
+		System.out.println("ModelCheckCTLUtil.openFile ");
 		// Could not do this here??
 		// int returnVal =
 		// ModelCheckCTLView.getFc().showOpenDialog(ModelCheckCTLUtil.this);

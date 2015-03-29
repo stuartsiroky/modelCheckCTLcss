@@ -19,6 +19,7 @@ public abstract class AbstractModel implements Model {
 	 * modelCheckCTL.model.Model#notifyChanged(modelCheckCTL.model.ModelEvent)
 	 */
 	public void notifyChanged(ModelEvent event) {
+		System.out.println("AbstractModel.notifiyChanged ");
 		@SuppressWarnings("rawtypes")
 		ArrayList list = (ArrayList) listeners.clone();
 		@SuppressWarnings("rawtypes")
@@ -36,6 +37,7 @@ public abstract class AbstractModel implements Model {
 	 */
 	@SuppressWarnings("unchecked")
 	public void addModelListener(ModelListener l) {
+		System.out.println("AbstractModel.addModelListener ");
 		listeners.add(l);
 	}
 
@@ -45,6 +47,7 @@ public abstract class AbstractModel implements Model {
 	 * @param l
 	 */
 	public void removeModelListener(ModelListener l) {
+		System.out.println("AbstractModel.removeModelListener ");
 		listeners.remove(l);
 	}
 } // AbstractModel

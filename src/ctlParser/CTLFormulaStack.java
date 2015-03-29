@@ -1,6 +1,8 @@
-package modelCheckCTL.model;
+package ctlParser;
 
 import java.util.Stack;
+
+import modelCheckCTL.model.ModelException;
 
 /**
  * This class is responsible for creating a data structure to represent a well

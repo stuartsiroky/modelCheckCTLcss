@@ -2,6 +2,8 @@ package modelCheckCTL.model;
 
 import java.io.File;
 
+import ctlParser.CTLParser;
+import ctlParser.LabelCTLAlg;
 import kripke.KripkeElement;
 import kripke.KripkeStruct;
 
@@ -28,6 +30,7 @@ public class ModelCheckCTLModel extends AbstractModel {
 	 *            File handle
 	 */
 	public void parseFile(File f) {
+		System.out.println("ModelCheckCTLModel.parseFile "+f.toString());
 		ks = new KripkeStruct();
 		String msg = "";
 		try {
@@ -56,6 +59,7 @@ public class ModelCheckCTLModel extends AbstractModel {
 	 */
 	@SuppressWarnings("finally")
 	public boolean parseFormula(String f) {
+		System.out.println("ModelCheckCTLModel.parseFormula "+f);
 		parser = new CTLParser();
 		ctlFormula = "";
 		String msg = "";
@@ -91,6 +95,7 @@ public class ModelCheckCTLModel extends AbstractModel {
 	 *            String for the starting state
 	 */
 	public void checkKS(String ss) {
+		System.out.println("ModelCheckCTLModel.checkKS "+ss);
 		String msg = "";
 		LabelCTLAlg lctl = null;
 
@@ -146,6 +151,7 @@ public class ModelCheckCTLModel extends AbstractModel {
 	 *            String
 	 */
 	private void modelViewNotify(String msg) {
+		System.out.println("ModelCheckCTLModel.modelViewNotify "+msg);
 		ModelEvent me = new ModelEvent(this, 1, "", msg);
 		notifyChanged(me);
 	}

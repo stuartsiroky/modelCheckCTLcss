@@ -1,4 +1,6 @@
-package modelCheckCTL.model;
+package ctlParser;
+
+import modelCheckCTL.model.ModelException;
 
 /**
  * This is the main object for creating and handling a CTL formula.

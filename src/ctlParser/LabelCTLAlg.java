@@ -1,8 +1,9 @@
-package modelCheckCTL.model;
+package ctlParser;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import modelCheckCTL.model.ModelException;
 import kripke.KripkeElement;
 import kripke.KripkeStruct;
 import tarjan.TarjanAlg;

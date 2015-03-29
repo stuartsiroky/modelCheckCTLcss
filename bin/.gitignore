@@ -1,4 +1,11 @@
-/data_obj/
-/kripke/
-/modelCheckCTL/
-/tarjan/
+/testKripkeFile1.txt
+/testKripkeFile2.txt
+/testKripkeFile3.txt
+/testKripkeFile4.txt
+/testKripkeFile5.txt
+/testKripkeFile6.txt
+/testKripkeFileERR1.txt
+/testKripkeFileERR2.txt
+/testKripkeFileERR3.txt
+/testKripkeFileERR4.txt
+/events/

@@ -113,6 +113,7 @@ public class ModelCheckCTLView extends JFrameView {
 	 */
 	public void modelChanged(ModelEvent event) {
 		String msg = event.getOutput() + "";
+		System.out.println("ModelCheckCTLView.modelChanged "+msg);
 		getLog().append(msg);
 	}
 
@@ -122,6 +123,7 @@ public class ModelCheckCTLView extends JFrameView {
 	 * @param s
 	 */
 	public void displayResults(String s) {
+		System.out.println("ModelCheckCTLView.displayResults ");
 		getLog().append(s + "\n");
 	} // displayResults
 
@@ -142,6 +144,7 @@ public class ModelCheckCTLView extends JFrameView {
 		 * )
 		 */
 		public void actionPerformed(ActionEvent e) {
+			System.out.println("ModelCheckCTL$Hander.actionPerformed.operation "+e.getSource());
 			if (e.getSource() == loadKSButton) {
 				returnVal = fc.showOpenDialog(ModelCheckCTLView.this);
 			}
@@ -159,42 +162,52 @@ public class ModelCheckCTLView extends JFrameView {
 
 	// getters and setters
 	public JTextArea getLog() {
+		System.out.println("ModelCheckCTLView.getLog ");
 		return log;
 	}
 
 	public void setLog(JTextArea log) {
+		System.out.println("ModelCheckCTLView.setLog ");
 		this.log = log;
 	}
 
 	public JTextField getCtlFormula() {
+		System.out.println("ModelCheckCTLView.getCTLFormula ");
 		return ctlFormula;
 	}
 
 	public JTextField getStartState() {
+		System.out.println("ModelCheckCTLView.getStartState ");
 		return startState;
 	}
 
 	public void setStartState(JTextField startState) {
+		System.out.println("ModelCheckCTLView.setStartState ");
 		this.startState = startState;
 	}
 
 	public void setCtlFormula(JTextField ctlFormula) {
+		System.out.println("ModelCheckCTLView.setCtlFormula ");
 		this.ctlFormula = ctlFormula;
 	}
 
 	public JFileChooser getFc() {
+		System.out.println("ModelCheckCTLView.getFc ");
 		return fc;
 	}
 
 	public void setFc(JFileChooser fc) {
+		System.out.println("ModelCheckCTLView.setFc ");
 		this.fc = fc;
 	}
 
 	public int getReturnVal() {
+		System.out.println("ModelCheckCTLView.getReturnVal ");
 		return returnVal;
 	}
 
 	public void setReturnVal(int returnVal) {
+		System.out.println("ModelCheckCTLView.setReturnVal ");
 		this.returnVal = returnVal;
 	}
 

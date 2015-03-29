@@ -32,6 +32,7 @@ abstract public class JFrameView extends JFrame implements View, ModelListener {
 	 * Register the listener with the model.
 	 */
 	public void registerWithModel() {
+		System.out.println("JFrameView.registerWithModel ");
 		((AbstractModel) model).addModelListener(this);
 	}
 
@@ -41,6 +42,7 @@ abstract public class JFrameView extends JFrame implements View, ModelListener {
 	 * @see modelCheckCTL.view.View#getController()
 	 */
 	public Controller getController() {
+		System.out.println("JFrameView.getController ");
 		return controller;
 	}
 
@@ -52,6 +54,7 @@ abstract public class JFrameView extends JFrame implements View, ModelListener {
 	 * )
 	 */
 	public void setController(Controller controller) {
+		System.out.println("JFrameView.setController ");
 		this.controller = controller;
 	}
 
@@ -61,6 +64,7 @@ abstract public class JFrameView extends JFrame implements View, ModelListener {
 	 * @see modelCheckCTL.view.View#getModel()
 	 */
 	public Model getModel() {
+		System.out.println("JFrameView.getModel ");
 		return model;
 	}
 
@@ -70,6 +74,7 @@ abstract public class JFrameView extends JFrame implements View, ModelListener {
 	 * @see modelCheckCTL.view.View#setModel(modelCheckCTL.model.Model)
 	 */
 	public void setModel(Model model) {
+		System.out.println("JFrameView.setModel ");
 		this.model = model;
 		registerWithModel();
 	}

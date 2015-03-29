@@ -2,7 +2,7 @@ package kripke;
 
 import java.util.ArrayList;
 
-import modelCheckCTL.model.CTLFormula;
+import ctlParser.CTLFormula;
 import data_obj.Node;
 
 /**

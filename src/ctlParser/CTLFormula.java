@@ -1,4 +1,4 @@
-package modelCheckCTL.model;
+package ctlParser;
 
 // This is a binary search tree node
 /**

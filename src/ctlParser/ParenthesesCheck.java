@@ -1,4 +1,4 @@
-package modelCheckCTL.model;
+package ctlParser;
 
 import java.util.Stack;
 
